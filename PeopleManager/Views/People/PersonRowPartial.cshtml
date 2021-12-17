@@ -1,0 +1,15 @@
+﻿@model Person
+<tr>
+	<td>@Model.FirstName</td>
+	<td>@Model.LastName</td>
+	<td><a href="mailto:@Model.Email">@Model.Email</a></td>
+	<td>
+		<a class="btn btn-outline-info" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+        <a class="btn btn-outline-warning" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+        <button class="btn btn-outline-warning" 
+           data-role="Delete" 
+           data-id="@Model.Id"
+           data-toggle="modal" 
+           data-target="#deleteModal">Delete with modal</button>
+	</td>
+</tr>

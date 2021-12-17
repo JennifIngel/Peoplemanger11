@@ -1,0 +1,14 @@
+﻿@model Person
+
+@{
+	ViewData["Title"] = "Create new Person";
+}
+
+<div class="text-center">
+	<h1 class="display-4">@ViewData["Title"]</h1>
+</div>
+
+<form method="post">
+	<partial name="PersonCreateEditPartial" model="Model"/>
+	<button type="submit" class="btn btn-primary">Create</button>
+</form>

@@ -1,0 +1,30 @@
+﻿@model IList<Person>
+@{
+	ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+	<h1 class="display-4">Welcome</h1>
+	<p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+@if (Model.Any())
+{
+    <div class="text-center">
+        <h1 class="display-4">Employee of the Month</h1>
+        <partial name="PersonCardPartial" model="Model.First()"/>
+    </div>
+}
+
+
+<div class="text-center">
+	<h1 class="display-4">People</h1>
+	<div class="row">
+		@foreach (var person in Model)
+		{
+			<div class="col-lg-4 col-12">
+				<partial name="PersonCardPartial" model="person"/>
+			</div>
+		}
+	</div>
+</div>
